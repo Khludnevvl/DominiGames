@@ -3,10 +3,12 @@
 #include <algorithm>
 
 PhoneBook* PhoneBook::book_ptr_ = nullptr;
+PhoneBookDestroyer PhoneBook::destroyer_;
 
 PhoneBook *PhoneBook::getInstance() {
     if(book_ptr_ == nullptr){
         book_ptr_ = new PhoneBook();
+        destroyer_.initialize(book_ptr_);
     }
     return book_ptr_;
 }
