@@ -10,12 +10,15 @@ class PhoneBook {
     using Dict = std::multimap<std::string, std::string>;
 public:
     static PhoneBook *getInstance();
+
     const Dict &getAllDict() const {
         return names_to_phone_;
     }
 
     void addNewContact(std::string name, std::string phone);
+
     Dict findByName(const std::string &str) const;
+
     size_t getBookSize() const;
 
 protected:
@@ -24,24 +27,26 @@ protected:
     }
 
     PhoneBook(const PhoneBook &) = delete;
+
     PhoneBook(PhoneBook &&) = delete;
 
     PhoneBook &operator=(const PhoneBook &) = delete;
+
     PhoneBook &operator=(PhoneBook &&) = delete;
 
     ~PhoneBook() {};
-
 private:
+
     void makeExamples();
+
+    bool findInclude(std::string text, std::string prefix) const;
 
     static PhoneBook *book_ptr_;
     static PhoneBookDestroyer destroyer_;
 
     friend class PhoneBookDestroyer;
 
-
     Dict names_to_phone_;
-
 };
 
 class PhoneBookDestroyer {
