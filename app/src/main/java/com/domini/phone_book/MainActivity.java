@@ -8,22 +8,17 @@ import android.widget.TextView;
 import com.domini.phone_book.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-
     // Used to load the 'phone_book' library on application startup.
     static {
         System.loadLibrary("phone_book");
     }
 
-    private ActivityMainBinding binding;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_main);
     }
 
-    /**
-     * A native method that is implemented by the 'phone_book' native library,
-     * which is packaged with this application.
-     */
+    public native String getAllContacts();
+    private native String getContactsByName(String name);
 }

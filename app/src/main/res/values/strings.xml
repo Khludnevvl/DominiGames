@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">phone_book</string>
+    <string name="add_button">Добавить</string>
+    <string name="update_button">Обновить</string>
+    <string name="info_button">Инфо</string>
+    <string name="find_button">Найти</string>
+    <string name="clear_button_description">Очистить</string>
+    <string name="text_view_name">Имя</string>
+
 </resources>

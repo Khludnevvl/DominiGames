@@ -1,19 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/sample_text"
+    <EditText
+        android:id="@+id/edit_text_find"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_toStartOf="@id/button_find"
+        android:layout_toEndOf="@id/button_clear"
+        android:ems="10"
+        android:hint="@string/text_view_name"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/button_clear"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/ic_baseline_close_24"
+        android:contentDescription="@string/clear_button_description"
+        />
+
+    <Button
+        android:id="@+id/button_find"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentEnd="true"
+        android:text="@string/find_button"
+        android:layout_marginEnd="10dp"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/button_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_clear"
+        android:layout_marginHorizontal="15dp"
+        android:layout_toEndOf="@id/button_info"
+        android:text="@string/add_button"
+        android:textSize="11sp"
+        />
+
+
+    <Button
+        android:id="@+id/button_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_clear"
+        android:layout_alignParentStart="true"
+        android:layout_marginHorizontal="15dp"
+        android:text="@string/update_button"
+        />
+
+    <Button
+        android:id="@+id/button_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_clear"
+        android:layout_marginHorizontal="15dp"
+        android:layout_toEndOf="@id/button_update"
+        android:text="@string/info_button" />
+    <ListView
+        android:id="@+id/contactList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_add"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="6dp"
+        >
+
+    </ListView>
+
+</RelativeLayout>
