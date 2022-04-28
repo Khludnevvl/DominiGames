@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DeviceInfoActivity">
+
+    <Button
+        android:id="@+id/button_info_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="@string/button_back" />
+    <TextView
+        android:id="@+id/text_view_device_model_info_label"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/button_info_back"
+        android:text="@string/text_view_device_model_info_label"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_margin = "25dp"
+        />
+
+    <TextView
+        android:id="@+id/text_view_device_model_info"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_below="@id/button_info_back"
+        android:layout_toEndOf="@id/text_view_device_model_info_label"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="25dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:id="@+id/text_view_device_brand_info_label"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:text="@string/text_view_device_brand_info_label"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_margin = "25dp"
+        android:layout_below="@id/text_view_device_model_info_label"
+        />
+
+    <TextView
+        android:id="@+id/text_view_device_brand_info"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_margin = "25dp"
+        android:layout_below="@id/text_view_device_model_info"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@id/text_view_device_brand_info_label"
+        />
+
+    <TextView
+        android:id="@+id/text_view_os_version_info_label"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:text="@string/text_view_os_version_info_label"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_margin = "25dp"
+        android:layout_below="@id/text_view_device_brand_info_label"
+        />
+
+    <TextView
+        android:id="@+id/text_view_os_version_info"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_margin = "25dp"
+        android:layout_below="@id/text_view_device_brand_info"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@id/text_view_os_version_info_label"
+        />
+
+</RelativeLayout>

@@ -65,7 +65,7 @@
         android:layout_toEndOf="@id/button_update"
         android:text="@string/info_button" />
     <ListView
-        android:id="@+id/contactList"
+        android:id="@+id/contact_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/button_add"

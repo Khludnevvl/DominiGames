@@ -2,6 +2,7 @@ package com.domini.phone_book;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -60,8 +61,6 @@ public class MainActivity extends AppCompatActivity {
                 showContacts(getAllContacts());
             }
         });
-
-
     }
 
     private List<HashMap<String,String>> convertJSONToList(JSONArray jsonArray)  {
@@ -78,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void showContacts(String json_str){
         try {
-            ListView contactList = findViewById(R.id.contactList);
+            ListView contactList = findViewById(R.id.contact_list);
             JSONArray phoneBookJSON = new JSONArray(json_str);
             List<HashMap<String,String>> phone_book = convertJSONToList(phoneBookJSON);
             SimpleAdapter adapter = new SimpleAdapter(this, phone_book, R.layout.list_item,
@@ -89,6 +88,16 @@ public class MainActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        Button infoButton = findViewById(R.id.button_info);
+        infoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this ,
+                        DeviceInfoActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     public native String getAllContacts();
     private native String getContactsByName(String name);
