@@ -61,6 +61,24 @@ public class MainActivity extends AppCompatActivity {
                 showContacts(getAllContacts());
             }
         });
+        Button addButton = findViewById(R.id.button_add);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this ,
+                        AddContactActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button infoButton = findViewById(R.id.button_info);
+        infoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this ,
+                        DeviceInfoActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private List<HashMap<String,String>> convertJSONToList(JSONArray jsonArray)  {
@@ -88,16 +106,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-        Button infoButton = findViewById(R.id.button_info);
-        infoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this ,
-                        DeviceInfoActivity.class);
-                startActivity(intent);
-            }
-        });
     }
     public native String getAllContacts();
     private native String getContactsByName(String name);

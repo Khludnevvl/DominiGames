@@ -10,5 +10,7 @@
     <string name="text_view_device_brand_info_label">Бренд:</string>
     <string name="text_view_os_version_info_label">Версия ОС:</string>
     <string name="button_back">Назад</string>
+    <string name="text_view_phone">Номер</string>
+    <string name="button_save">Сохранить</string>
 
 </resources>
